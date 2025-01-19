@@ -41,7 +41,7 @@ main {
 
   @media (max-width: 1024px) {
     overflow: visible;
-    padding: 2rem;
+    padding: 2rem 1.5rem;
 
     & .main-container {
       margin: 0 auto;
@@ -77,6 +77,7 @@ aside {
 
   @media (max-width: 1024px) {
     padding: 2rem;
+    padding: 2rem 1.5rem;
 
     & .aside-container {
       margin: 0 auto;
