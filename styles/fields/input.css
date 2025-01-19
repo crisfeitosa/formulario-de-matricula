@@ -9,6 +9,10 @@ input, textarea, select {
   font: var(--text);
 }
 
+textarea {
+  resize: none;
+}
+
 label {
   font: var(--text-sm);
   color: var(--text-secondary);
