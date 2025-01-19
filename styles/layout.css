@@ -1,14 +1,26 @@
 #app {
   display: grid;
   grid-template-columns: 51.25% 48.75%;
+  grid-template-areas: "main aside";
 
   height: 100vh;
   overflow: hidden;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr; /* Um elemento por linha */
+    grid-template-rows: auto auto; /* Ajusta as linhas automaticamente */
+    grid-template-areas: 
+      "aside"
+      "main";
+    height: auto; /* Permite que o conteúdo defina a altura */
+    overflow-y: auto;
+  }
 }
 
 main {
   overflow: auto;
   padding: 4rem;
+  grid-area: main;
 
   & .main-container {
     max-width: 33rem;
@@ -26,11 +38,25 @@ main {
     font: 600 1.5rem/1.25 var(--font-family);
     margin-bottom: 0.5rem;
   }
+
+  @media (max-width: 1024px) {
+    overflow: visible;
+    padding: 2rem;
+
+    & .main-container {
+      margin: 0 auto;
+    }
+
+    & h1 {
+      font-size: 1.25rem;
+    }
+  }
 }
 
 aside {
   background-color: var(--surface-secondary);
   padding: 4rem;
+  grid-area: aside;
 
   & .aside-container {
     max-width: 31rem;
@@ -48,4 +74,17 @@ aside {
       color: var(--text-highlight);
     }
   }
+
+  @media (max-width: 1024px) {
+    padding: 2rem;
+
+    & .aside-container {
+      margin: 0 auto;
+    }
+
+    & h2 {
+      font-size: 1.75rem;
+    }
+  }
 }
+
